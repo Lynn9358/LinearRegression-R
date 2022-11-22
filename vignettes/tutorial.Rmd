@@ -24,6 +24,26 @@ LRM_R(PlantGrowth$weight~PlantGrowth$group)
 ```
 
 Test the correctness of LRM_R
+```{r, all.equal}
+all.equal(summary(lm(PlantGrowth$weight~PlantGrowth$group ))$coef, LRM_R(PlantGrowth$weight~PlantGrowth$group)$coefficients)
+```
 
+Test the efficiency of LRM_R
+```{r, bench::mark}
+eff = bench::mark(summary(lm(mtcars$mpg~mtcars$disp +mtcars$wt+mtcars$qsec ))$coef, LRM_R(mtcars$mpg~mtcars$disp +mtcars$wt+mtcars$qsec )$coefficients)
+as.matrix(eff)
+model1 = summary(lm(mtcars$mpg~mtcars$disp +mtcars$wt+mtcars$qsec ))$coef
+model2 = LRM_R(mtcars$mpg~mtcars$disp +mtcars$wt+mtcars$qsec )$coefficients
+plot(bench::mark(model1,model2))
+```
 
+Application of LRM_R
+```{r, model vs. real data}
+#Dataset from an experiment on measuring the reaction velocity versus substrate concentration in an enzymatic reaction involving untreated cells or cells treated with Puromycin.
+df_Puromycin = Puromycin[order(Puromycin$conc),]
+y_real = df_Puromycin$conc
+y_model = LRM_R(df_Puromycin$conc~df_Puromycin$rate +df_Puromycin$state)$Y_model
+plot(y_real,type="l",col="red")
+lines(y_model,col="green")
+```
 
