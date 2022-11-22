@@ -5,8 +5,8 @@
 #'
 #'
 #' @param formula  a symbolic description of the model to be fitted.
-#' @param x=FALSE  logicals.It is TRUE after the model matrix returned.
-#' @param y=FALSE  logicals.It is TRUE after the reponse matrix returned.
+#' @param x  logicals.It is TRUE after the model matrix returned.
+#' @param y  logicals.It is TRUE after the reponse matrix returned.
 #'
 #'
 #'@returns LRM_R returns a set of simple and multiple linear regression result of formula.

@@ -9,9 +9,9 @@ LRM_R(formula, x = FALSE, y = FALSE)
 \arguments{
 \item{formula}{a symbolic description of the model to be fitted.}
 
-\item{x=FALSE}{logicals.It is TRUE after the model matrix returned.}
+\item{x}{logicals.It is TRUE after the model matrix returned.}
 
-\item{y=FALSE}{logicals.It is TRUE after the reponse matrix returned.}
+\item{y}{logicals.It is TRUE after the reponse matrix returned.}
 }
 \value{
 LRM_R returns a set of simple and multiple linear regression result of formula.
