@@ -8,7 +8,16 @@
 [![R-CMD-check](https://github.com/Lynn9358/LinearRegression-R/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Lynn9358/LinearRegression-R/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The goal of LinearRegressionR is to …
+## Overview
+
+Linear regression model in R is a package for simple and multiple linear
+model fitting, providing a set of verbs that help to solve common model
+fitting challenges.
+
+- `LRM_R()` fits linear regression model using least squares method,
+  displays the overall result of fitted regression model, calculates the
+  estimated value，standard deviation and statistics value and
+  confidence intervals of coefficients.
 
 ## Installation
 
@@ -20,38 +29,35 @@ You can install the development version of LinearRegressionR from
 devtools::install_github("Lynn9358/LinearRegression-R")
 ```
 
+## Usage
+
+``` r
+library ("LinearRegressionR")
+```
+
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example of Linear Regression:
 
 ``` r
 library(LinearRegressionR)
 ## basic example code
+LRM_R(mtcars$mpg~mtcars$disp +mtcars$wt+mtcars$qsec )
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+To fit with actual value
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+#Dataset from an experiment on measuring the reaction velocity versus substrate concentration in an enzymatic reaction involving untreated cells or cells treated with Puromycin.
+df_Puromycin = Puromycin[order(Puromycin$conc),]
+y_real = df_Puromycin$conc
+y_model = LRM_R(df_Puromycin$conc~df_Puromycin$rate +df_Puromycin$state)$Y_model
+plot(y_real,type="l",col="red")
+lines(y_model,col="green")
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/v1/examples>.
+## Reference
 
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+Methods in this package mainly stems from [Introduction to Linear
+Regression
+Analysis](https://ebookcentral.proquest.com/lib/umichigan/detail.action?docID=7103892o)
