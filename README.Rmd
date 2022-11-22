@@ -32,7 +32,7 @@ Linear regression model in R is a package for simple and multiple linear model f
 
 You can install the development version of LinearRegressionR from [GitHub](https://github.com/) with:
 
-``` r
+```r
 # install.packages("devtools")
 devtools::install_github("Lynn9358/LinearRegression-R")
 ```
@@ -47,14 +47,14 @@ library ("LinearRegressionR")
 ## Example
 
 This is a basic example of Linear Regression:
-``` r
+``` {r}
 library(LinearRegressionR)
 ## basic example code
 LRM_R(mtcars$mpg~mtcars$disp +mtcars$wt+mtcars$qsec )
-
 ``` 
+
 To fit with actual value
-``` r
+``` {r}
 #Dataset from an experiment on measuring the reaction velocity versus substrate concentration in an enzymatic reaction involving untreated cells or cells treated with Puromycin.
 df_Puromycin = Puromycin[order(Puromycin$conc),]
 y_real = df_Puromycin$conc
