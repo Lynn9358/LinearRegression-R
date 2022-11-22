@@ -32,6 +32,9 @@ Test the efficiency of LRM_R
 ```{r, bench::mark}
 if(!require(bench)) {
 install.packages("bench",repos = "http://cran.us.r-project.org")}
+if(!require(ggplot2)) {
+install.packages("ggplot2",repos = "http://cran.us.r-project.org")}
+
 eff = bench::mark(summary(lm(mtcars$mpg~mtcars$disp +mtcars$wt+mtcars$qsec ))$coef, LRM_R(mtcars$mpg~mtcars$disp +mtcars$wt+mtcars$qsec )$coefficients)
 as.matrix(eff)
 model1 = summary(lm(mtcars$mpg~mtcars$disp +mtcars$wt+mtcars$qsec ))$coef
