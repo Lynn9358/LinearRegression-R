@@ -6,7 +6,8 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/Lynn9358/LinearRegression-R/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Lynn9358/LinearRegression-R/actions/workflows/R-CMD-check.yaml)
-<!-- badges: end -->
+[![Codecov test coverage](https://codecov.io/gh/Lynn9358/LinearRegression-R/branch/main/graph/badge.svg)](https://app.codecov.io/gh/Lynn9358/LinearRegression-R?branch=main)
+<!-- badges: end --> <!-- badges: end -->
 
 ## Overview
 
