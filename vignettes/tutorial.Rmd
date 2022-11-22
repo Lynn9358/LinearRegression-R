@@ -36,8 +36,10 @@ if(!require(ggplot2)) {
 install.packages("ggplot2",repos = "http://cran.us.r-project.org")}
 if(!require(tidyr)) {
 install.packages("tidyr",repos = "http://cran.us.r-project.org")}
+if(!require(ggbeeswarm)) {
+install.packages("ggbeeswarm",repos = "http://cran.us.r-project.org")}
 
-eff = bench::mark(summary(lm(mtcars$mpg~mtcars$disp +mtcars$wt+mtcars$qsec ))$coef, LRM_R(mtcars$mpg~mtcars$disp +mtcars$wt+mtcars$qsec )$coefficients)
+bench::mark(summary(lm(mtcars$mpg~mtcars$disp +mtcars$wt+mtcars$qsec ))$coef, LRM_R(mtcars$mpg~mtcars$disp +mtcars$wt+mtcars$qsec )$coefficients)
 as.matrix(eff)
 model1 = summary(lm(mtcars$mpg~mtcars$disp +mtcars$wt+mtcars$qsec ))$coef
 model2 = LRM_R(mtcars$mpg~mtcars$disp +mtcars$wt+mtcars$qsec )$coefficients
