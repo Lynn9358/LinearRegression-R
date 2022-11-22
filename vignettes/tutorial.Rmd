@@ -39,7 +39,7 @@ install.packages("tidyr",repos = "http://cran.us.r-project.org")}
 if(!require(ggbeeswarm)) {
 install.packages("ggbeeswarm",repos = "http://cran.us.r-project.org")}
 
-bench::mark(summary(lm(mtcars$mpg~mtcars$disp +mtcars$wt+mtcars$qsec ))$coef, LRM_R(mtcars$mpg~mtcars$disp +mtcars$wt+mtcars$qsec )$coefficients)
+eff= bench::mark(summary(lm(mtcars$mpg~mtcars$disp +mtcars$wt+mtcars$qsec ))$coef, LRM_R(mtcars$mpg~mtcars$disp +mtcars$wt+mtcars$qsec )$coefficients)
 as.matrix(eff)
 model1 = summary(lm(mtcars$mpg~mtcars$disp +mtcars$wt+mtcars$qsec ))$coef
 model2 = LRM_R(mtcars$mpg~mtcars$disp +mtcars$wt+mtcars$qsec )$coefficients
