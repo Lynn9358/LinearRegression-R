@@ -17,3 +17,13 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(LinearRegressionR)
 ```
+
+Demo{LRM_R}:
+```{r}
+LRM_R(PlantGrowth$weight~PlantGrowth$group)
+```
+
+Test the correctness of LRM_R
+
+
+
