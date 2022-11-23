@@ -111,6 +111,6 @@ lines(y_model,col="green")
 
 ## Reference
 
-Methods in this package mainly stems from [Introduction to Linear
+Methods in this package mainly stem from [Introduction to Linear
 Regression
 Analysis](https://ebookcentral.proquest.com/lib/umichigan/detail.action?docID=7103892o)
